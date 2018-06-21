@@ -18,7 +18,7 @@ resource "kubernetes_config_map" "aws_auth_worker_node_join" {
 
   data {
     mapRoles  = <<EOF
-- rolearn: ${var.iam-role-arn}
+- rolearn: ${data.terraform_remote_state.k8s_cluster.iam-role-arn}
   username: system:node:{{EC2PrivateDNSName}}
   groups:
     - system:bootstrappers
