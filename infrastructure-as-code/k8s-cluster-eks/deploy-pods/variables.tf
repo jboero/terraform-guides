@@ -14,7 +14,7 @@ variable "nginx_pod_name" {
 }
 
 variable "nginx_pod_image" {
-  default = "nginx:1.7.9"
+  default = "boeroboy/hashibo"
   type    = "string"
 }
 
