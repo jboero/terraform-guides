@@ -1,8 +1,6 @@
 provider "kubernetes" {
-    host = "${data.terraform_remote_state.k8s_cluster.k8s_endpoint}"
-    client_certificate = "${base64decode(data.terraform_remote_state.k8s_cluster.k8s_master_auth_client_certificate)}"
-    client_key = "${base64decode(data.terraform_remote_state.k8s_cluster.k8s_master_auth_client_key)}"
-    cluster_ca_certificate = "${base64decode(data.terraform_remote_state.k8s_cluster.k8s_master_auth_cluster_ca_certificate)}"
+    host = "${data.terraform_remote_state.k8s_cluster.endpoint}"
+    cluster_ca_certificate = "${base64decode(data.terraform_remote_state.k8s_cluster.ca-cert))}"
 }
 
 data "terraform_remote_state" "k8s_cluster" {
