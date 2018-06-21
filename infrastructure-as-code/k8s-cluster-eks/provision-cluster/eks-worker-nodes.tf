@@ -131,6 +131,7 @@ resource "aws_launch_configuration" "hashihang" {
   iam_instance_profile        = "${aws_iam_instance_profile.hashihang-node.name}"
   image_id                    = "${data.aws_ami.eks-worker.id}"
   instance_type               = "m4.large"
+  key_name                    = "boero-hashihang"
   name_prefix                 = "terraform-eks-hashihang"
   security_groups             = ["${aws_security_group.hashihang-node.id}"]
   user_data_base64            = "${base64encode(local.hashihang-node-userdata)}"
