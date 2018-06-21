@@ -2,7 +2,7 @@
 resource "null_resource" "env" {
   provisioner "local-exec" {
     command = <<EOF
-mkdir ~/.kube
+mkdir -p ~/.kube
 cat <<CONFIG | tee ~/.kube/${var.cluster-name}-config
 ${local.kubeconfig}
 CONFIG
