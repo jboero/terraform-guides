@@ -3,7 +3,7 @@
 #
 
 variable "cluster-name" {
-  default = "terraform-eks-demo"
+  default = "terraform-eks-hashihang"
   type    = "string"
 }
 

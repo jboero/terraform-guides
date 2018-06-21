@@ -9,7 +9,7 @@ variable "namespace_name" {
 }
 
 variable "nginx_pod_name" {
-  default = "nginx-demo"
+  default = "nginx-hashihang"
   type    = "string"
 }
 

@@ -1,1 +1,1 @@
-cluster-name = "demo"
+cluster-name = "hashihang"

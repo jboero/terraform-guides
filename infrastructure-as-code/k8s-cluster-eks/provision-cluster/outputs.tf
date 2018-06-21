@@ -13,7 +13,7 @@ metadata:
   namespace: kube-system
 data:
   mapRoles: |
-    - rolearn: ${aws_iam_role.demo-node.arn}
+    - rolearn: ${aws_iam_role.hashihang-node.arn}
       username: system:node:{{EC2PrivateDNSName}}
       groups:
         - system:bootstrappers
@@ -26,8 +26,8 @@ CONFIGMAPAWSAUTH
 apiVersion: v1
 clusters:
 - cluster:
-    server: ${aws_eks_cluster.demo.endpoint}
-    certificate-authority-data: ${aws_eks_cluster.demo.certificate_authority.0.data}
+    server: ${aws_eks_cluster.hashihang.endpoint}
+    certificate-authority-data: ${aws_eks_cluster.hashihang.certificate_authority.0.data}
   name: ${var.cluster}
 contexts:
 - context:
@@ -71,15 +71,15 @@ output "user" {
 }
 
 output "endpoint" {
-  value = "${aws_eks_cluster.demo.endpoint}"
+  value = "${aws_eks_cluster.hashihang.endpoint}"
 }
 
 output "ca-cert" {
-  value = "${aws_eks_cluster.demo.certificate_authority.0.data}"
+  value = "${aws_eks_cluster.hashihang.certificate_authority.0.data}"
 }
 
 output "iam-role-arn" {
-  value = "${aws_iam_role.demo-node.arn}"
+  value = "${aws_iam_role.hashihang-node.arn}"
 }
 
 output "zREADME" {
