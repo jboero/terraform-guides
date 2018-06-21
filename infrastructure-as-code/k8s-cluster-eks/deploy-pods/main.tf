@@ -1,12 +1,12 @@
 provider "kubernetes" {
-    host = "${data.terraform_remote_state.k8s_cluster.outputs.endpoint}"
-    cluster_ca_certificate = "${base64decode(data.terraform_remote_state.k8s_cluster.outputs.ca-cert)}"
+    host = "${data.terraform_remote_state.k8s_cluster.endpoint}"
+    cluster_ca_certificate = "${base64decode(data.terraform_remote_state.k8s_cluster.ca-cert)}"
 }
 
 data "terraform_remote_state" "k8s_cluster" {
     backend = "atlas"
     config {
-        name = "JohnBoero/hashihang-pods"
+        name = "JohnBoero/hashihang-eks"
     }
 }
 
