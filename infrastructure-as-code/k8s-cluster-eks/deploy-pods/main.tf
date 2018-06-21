@@ -1,14 +1,6 @@
 provider "kubernetes" {
 }
 
-data "terraform_remote_state" "cluster" {
-  backend = "local"
-
-  config {
-    path = "${path.module}/../provision-cluster/terraform.tfstate"
-  }
-}
-
 resource "kubernetes_config_map" "aws_auth_worker_node_join" {
   metadata {
     name      = "${var.config_map_name}"
@@ -17,7 +9,7 @@ resource "kubernetes_config_map" "aws_auth_worker_node_join" {
 
   data {
     mapRoles  = <<EOF
-- rolearn: ${data.terraform_remote_state.cluster.iam-role-arn}
+- rolearn: ${var.iam-role-arn}
   username: system:node:{{EC2PrivateDNSName}}
   groups:
     - system:bootstrappers
@@ -70,7 +62,7 @@ resource "kubernetes_service" "nginx" {
     }
 
     port {
-      port = 8080
+      port = 80
       target_port = 80
     }
 
