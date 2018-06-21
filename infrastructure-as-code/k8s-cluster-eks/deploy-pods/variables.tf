@@ -17,3 +17,7 @@ variable "nginx_pod_image" {
   default = "nginx:1.7.9"
   type    = "string"
 }
+
+variable "iam-role-arn" {
+  type    = "string"
+}
