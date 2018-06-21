@@ -1,3 +1,4 @@
+/*
 resource "null_resource" "env" {
   provisioner "local-exec" {
     command = <<EOF
@@ -53,3 +54,4 @@ EOF
     "null_resource.env"
   ]
 }
+*/
