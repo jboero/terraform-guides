@@ -18,6 +18,3 @@ variable "nginx_pod_image" {
   type    = "string"
 }
 
-variable "iam-role-arn" {
-  type    = "string"
-}
