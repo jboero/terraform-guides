@@ -32,7 +32,7 @@ resource "kubernetes_namespace" "example" {
     name = "${var.namespace_name}"
 
     labels {
-      name = "example-label"
+      name = "example-label2"
     }
 
     annotations {
