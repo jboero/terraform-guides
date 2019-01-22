@@ -1,3 +1,9 @@
+resource "null_resource" "example1" {
+  provisioner "local-exec" {
+    command = "tree"
+  }
+}
+
 variable "aws_region" {
   description = "AWS region"
   default = "eu-west-2"
