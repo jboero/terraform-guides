@@ -36,7 +36,7 @@ data "aws_ami" "ubuntu_14_04" {
 
 resource "aws_instance" "ubuntu" {
   count = 3
-  ami = data.aws_ami.ubuntu_14_04.image_id
+  ami = data.aws_ami.ubuntu_16.04.image_id
   instance_type = "t2.micro"
   associate_public_ip_address = ( count.index == 1 ? true : false)
   subnet_id = aws_subnet.my_subnet.id
