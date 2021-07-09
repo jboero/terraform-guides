@@ -14,7 +14,7 @@ variable "nginx_pod_name" {
 }
 
 variable "nginx_pod_image" {
-  default = "boeroboy/hashibo:latest"
+  default = "boeroboy/hashibo:hashiconf-eu"
   type    = "string"
 }
 
